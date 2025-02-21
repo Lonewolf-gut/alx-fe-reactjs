@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav
-      style={{ backgroundColor: "navy", color: "white", textAlign: "center" }}
+      style={{
+        backgroundColor: "navy",
+        display: "flex",
+        justifyContent: "center",
+      }}
     >
       <ul>
         <li>
