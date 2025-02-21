@@ -5,6 +5,7 @@ import viteLogo from "/vite.svg";
 import Header from "./Header";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
+import Counter from "./components/Counter";
 import "./App.css";
 import UserProfile from "./components/UserProfile";
 
@@ -15,6 +16,7 @@ function App() {
     <>
       <Header />
       <MainContent />
+      <Counter />
       <Footer />
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
