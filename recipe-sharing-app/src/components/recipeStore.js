@@ -3,6 +3,7 @@ import create from 'zustand';
 const useRecipeStore = create((set) => ({
   recipes: [],
   favorites: [],
+  searchTerm: '',
   // Add a new recipe
   addRecipe: (newRecipe) =>
     set((state) => ({
@@ -17,6 +18,8 @@ const useRecipeStore = create((set) => ({
         recipe.id === updatedRecipe.id ? updatedRecipe : recipe
       ),
     })),
+    setSearchTerm: (term) => 
+      set({ searchTerm: term }, false, 'setSearchTerm'),
 
   // Delete a recipe
   deleteRecipe: (recipeId) => 
