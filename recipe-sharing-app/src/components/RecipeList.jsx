@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import { useRecipeStore } from '../store/recipeStore';
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
-
+  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+  const favorites = useRecipeStore((state) => state.favorites);
   return (
     <div>
       {filteredRecipes.length > 0 ? (
