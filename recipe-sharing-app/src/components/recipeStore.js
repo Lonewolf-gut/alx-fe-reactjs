@@ -10,6 +10,20 @@ const useRecipeStore = create((set) => ({
       filteredRecipes: [...state.filteredRecipes, newRecipe], // Update filtered list
     })),
 
+    // Update an existing recipe
+  updateRecipe: (updatedRecipe) => 
+    set((state) => ({
+      recipes: state.recipes.map((recipe) =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+      ),
+    })),
+
+  // Delete a recipe
+  deleteRecipe: (recipeId) => 
+    set((state) => ({
+      recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
+    })),
+}));
   // Set initial recipes (useful when fetching from an API)
   setRecipes: (recipes) =>
     set(() => ({
