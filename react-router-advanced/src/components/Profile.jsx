@@ -1,6 +1,11 @@
 // src/components/Profile.js
 import { Outlet, Link } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 const Profile = () => {
   return (
     <div>
