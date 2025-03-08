@@ -36,8 +36,9 @@ const TodoList = () => {
       />
       <button onClick={addTodo}>Add</button>
       <ul>
-        {todos.map((todo) => (
+        {todos.map((todo, index) => (
           <li
+            key={todo.id ?? index}
             className={todo.completed ? "completed" : ""}
             onClick={() => toggleTodo(todo.id)}
           >
