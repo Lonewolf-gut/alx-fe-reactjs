@@ -29,7 +29,7 @@ const AddRecipeForm = () => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Recipe Description"
-        required
+        requireda
       />
       <button type="submit">Add Recipe</button>
     </form>
