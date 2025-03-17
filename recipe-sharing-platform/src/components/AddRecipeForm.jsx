@@ -4,12 +4,12 @@ import { useState } from "react";
 const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setError("All fields are required.");
       return;
     }
@@ -17,10 +17,10 @@ const AddRecipeForm = () => {
       setError("Please include at least two ingredients.");
       return;
     }
-    console.log({ title, ingredients, instructions });
+    console.log({ title, ingredients, steps });
     setTitle("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     setError("");
   };
 
@@ -47,8 +47,8 @@ const AddRecipeForm = () => {
           placeholder="Preparation Steps"
           className="w-full p-2 border rounded"
           rows="4"
-          value={instructions}
-          onChange={(e) => setInstructions(e.target.value)}
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
         />
         <button
           type="submit"
