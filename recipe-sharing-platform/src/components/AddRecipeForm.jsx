@@ -1,4 +1,3 @@
-// src/components/AddRecipeForm.jsx
 import { useState } from "react";
 
 const AddRecipeForm = () => {
@@ -32,20 +31,20 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 max-w-lg bg-white shadow-lg rounded-lg">
+    <div className="container mx-auto p-4 max-w-lg bg-white shadow-lg rounded-lg md:p-6">
       <h2 className="text-2xl font-semibold mb-4">Add a New Recipe</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           placeholder="Recipe Title"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded md:p-3"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
         <textarea
           placeholder="Ingredients (one per line)"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded md:p-3"
           rows="4"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
@@ -55,7 +54,7 @@ const AddRecipeForm = () => {
         )}
         <textarea
           placeholder="Preparation Steps"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded md:p-3"
           rows="4"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
@@ -63,7 +62,7 @@ const AddRecipeForm = () => {
         {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 md:p-3"
         >
           Add Recipe
         </button>
