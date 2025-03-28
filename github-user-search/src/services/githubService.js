@@ -1,17 +1,13 @@
-const API_KEY = import.meta.env.VITE_APP_GITHUB_API_KEY;
+import axios from "axios";
 
-export const fetchGitHubData = async (username) => {
+const API_URL = "https://api.github.com/users/";
+
+export const fetchUserData = async (username) => {
   try {
-    const response = await fetch(`https://api.github.com/users/${username}`, {
-      headers: {
-        Authorization: `token ${API_KEY}`,
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    return await response.json();
+    const response = await axios.get(`${API_URL}${username}`);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching GitHub data:", error);
+    console.error("Error fetching GitHub user data:", error);
+    return null; // Return null so the error state can be handled in App.jsx
   }
 };
