@@ -8,6 +8,6 @@ export const fetchUserData = async (username) => {
     return response.data;
   } catch (error) {
     console.error("Error fetching GitHub user data:", error);
-    return null; // Return null so the error state can be handled in App.jsx
+    return null; // Return null to handle errors in Search.jsx
   }
 };
